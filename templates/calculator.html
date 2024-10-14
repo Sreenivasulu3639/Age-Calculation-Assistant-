@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>welcome to calculator</title>
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background for high contrast */
+    margin: 0;
+    padding: 20px;
+    color: #f5f5f5; /* Light text for readability */
+}
+
+.calculator-container {
+    max-width: 600px;
+    margin: auto;
+    background-color: #1f1f1f; /* Dark gray for a sleek container */
+    border: 3px solid #ff6f61; /* Bright coral border */
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0px 0px 20px #ff6f61; /* Matching shadow for emphasis */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+input[type="number"], input[type="text"], input[type="submit"], button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ff9f1c; /* Vibrant orange border for input fields */
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    background-color: #333333; /* Darker background for inputs */
+    color: #f5f5f5; /* Light text for inputs */
+}
+
+input[type="submit"] {
+    background-color: #d72638; /* Bold red button for action */
+    color: #f5f5f5;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff6f61; /* Coral hover effect */
+}
+
+button {
+    background-color: #08d9d6; /* Bright turquoise button */
+    color: #121212;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #00f5d4; /* Lighter turquoise on hover */
+}
+
+a {
+    text-decoration: none;
+    color: #08d9d6; /* Turquoise links to match button */
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 140px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #121212;
+    background-color: #f72585; /* Vivid pink for main buttons */
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #f72585; /* Matching shadow for buttons */
+}
+
+.button:hover {
+    background-color: #ff85a1; /* Light pink on hover */
+}
+</style>
+
+</head>
+<body>
+<form method="post" action="read">
+    {% csrf_token %}
+<div class="calculator-container">
+     <h1>SIMPLE CALCULATER</h1>
+        <table>
+            <tr>
+                <td><input type="number" placeholder="ENTER A NUMBER" name="txtno1" value="{{ n1 }}"></td>
+            </tr>
+            <tr>
+                <td><input type="number" placeholder="ENTER A NUMBER" name="txtno2" value="{{ n2 }}"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Add" name="operation">
+                    <input type="submit" value="Sub" name="operation">
+                    <input type="submit" value="Mul" name="operation">
+                    <input type="submit" value="Div" name="operation">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="GET THE RESULT" value="{{ res }}"></td>
+            </tr>
+            <tr>
+                <td><button><a href="/vote/" class="button">VOTE VALIDATOR</a></td>
+             </tr>
+        </table>
+
+    </div>
+</form>
+
+</body>
+</html>

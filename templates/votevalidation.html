@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6; /* Very light gray for a clean background */
+    margin: 0;
+    padding: 20px;
+}
+
+.calculator-container {
+    max-width: 500px;
+    margin: auto;
+    background-color: #ffffff; /* Classic white for the container */
+    border: 2px solid #2c3e50; /* Dark slate border for a strong outline */
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0px 0px 15px rgba(44, 62, 80, 0.2); /* Soft shadow for depth */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+input[type="number"], input[type="text"], input[type="submit"], button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #bdc3c7; /* Light gray border for inputs */
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    background-color: #ecf0f1; /* Light gray-blue background for inputs */
+    color: #2c3e50; /* Dark slate text for readability */
+}
+
+input[type="submit"] {
+    background-color: #2980b9; /* Rich blue for primary buttons */
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #1f618d; /* Slightly darker blue on hover */
+    opacity: 0.8;
+}
+
+button {
+    background-color: #e67e22; /* Vibrant orange for secondary actions */
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d35400; /* Darker orange on hover */
+}
+
+a {
+    text-decoration: none;
+    color: #2980b9; /* Matching link color to the primary button */
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 140px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #ffffff;
+    background-color: #8e44ad; /* Deep purple for main buttons */
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(142, 68, 173, 0.3); /* Soft shadow for buttons */
+}
+
+.button:hover {
+    background-color: #732d91; /* Darker purple on hover */
+}
+</style>
+
+
+</head>
+<body>
+<form method="post" action="readage">
+    {% csrf_token %}
+<div class="calculator-container">
+     <h1>VOTE VALIDATOR</h1>
+        <table>
+            <tr>
+                <td><input type="number" placeholder="ENTER A PERSON AGE" name="txtage" value="{{ AGE }}"></td>
+            </tr>
+            <tr>
+
+                <td>
+                    <input type="submit" value="Check Vote Eligibility" name="operation">
+
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="GET THE RESULT" value="{{ res }}"></td>
+            </tr>
+            <tr>
+                <td><button><a href="/" class="button">CALCULATOR</a></button><td>
+             </tr>
+        </table>
+
+    </div>
+</form>
+
+</body>
+</html>
